@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Auditor Smart Auto Fill",
+  "version": "1.0.0",
+  "description": "Fills Auditor issue details from an Excel mapping.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://axeauditor.dequecloud.com/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [{
+    "matches": ["https://axeauditor.dequecloud.com/*"],
+    "js": ["lib/xlsx.full.min.js", "content.js"],
+    "css": ["styles.css"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{ "resources": ["*.js", "data/*.xlsx"], "matches": ["https://axeauditor.dequecloud.com/*"] }],
+  "action": {
+    "default_title": "Auditor Smart Auto Fill",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

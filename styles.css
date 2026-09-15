@@ -1,0 +1,207 @@
+#auditor-autofill-widget {
+    position: fixed;
+    z-index: 2147483647;
+    width: 300px;
+    right: 16px;
+    top: 16px;
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cfecea;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(15, 118, 110, 0.18);
+    font: 14px/1.4 system-ui, sans-serif;
+    overflow: hidden
+}
+
+#auditor-autofill-widget header {
+    align-items: center;
+    background: #0077C8;
+    cursor: move;
+    display: flex;
+    gap: 8px;
+    padding: 10px
+}
+
+#auditor-autofill-widget strong {
+    flex: 1;
+    color: #ffffff;
+    font-weight: 700
+}
+
+#auditor-autofill-widget button {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 10px;
+    font: inherit
+}
+
+#auditor-autofill-widget button:hover {
+    background: #f0fdf4
+}
+
+#auditor-autofill-widget section {
+    padding: 12px
+}
+
+#auditor-autofill-widget.collapsed section {
+    display: none
+}
+
+#auditor-autofill-widget .platforms {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0
+}
+
+#auditor-autofill-widget .platforms button {
+    flex: 1;
+    background: #fbfcfc;
+    color: #0077C8;
+    border: 1px solid #99e3f6;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    font-weight: 700;
+    transition: background .15s, border-color .15s, color .15s
+}
+
+#auditor-autofill-widget .platforms button.selected {
+    background: #0077C8;
+    color: #ffffff;
+    border-color: #0077C8;
+    text-decoration: underline;
+}
+
+#auditor-autofill-widget .platforms button:focus-visible {
+    outline: 3px solid #0a0a0a;
+    outline-offset: 2px
+}
+
+#auditor-autofill-widget .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap
+}
+
+#auditor-autofill-widget label {
+    display: grid;
+    gap: 4px;
+    margin: 9px 0
+}
+
+#auditor-autofill-widget .switch {
+    display: flex;
+    gap: 7px;
+    align-items: center
+}
+
+#auditor-autofill-widget input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #94a3b8;
+    border-radius: 4px
+}
+
+.status {
+    font-weight: 700;
+    margin: 8px 0
+}
+
+.status[data-level="success"] {
+    color: #166534
+}
+
+.status[data-level="warning"] {
+    color: #d97706
+}
+
+.status[data-level="error"] {
+    color: #b91c1c
+}
+
+.file {
+    color: ;
+    margin: 5px 0;
+    overflow-wrap: anywhere
+}
+
+.actions {
+    margin: 8px 0
+}
+
+.preview {
+    max-height: 90px;
+    overflow: auto;
+    white-space: pre-line;
+    background: #f0fdf4;
+    border-radius: 5px;
+    padding: 7px;
+    color: #0f172a
+}
+
+:#e2e8f0
+}
+
+@media(prefers-color-scheme:light) {
+    #auditor-autofill-widget {
+        background: #eff6ff;
+        color: #0f172a
+    }
+
+    .file,
+    .preview {
+        color: #1e293b
+    }
+
+    .preview {
+        background: #dbeafe
+    }
+}
+
+#auditor-autofill-widget .workflow {
+    border-top: 1px solid #64748b;
+    margin: 10px 0;
+    padding: 8px 0 0 24px
+}
+
+.workflow li {
+    color: #e2e8f0;
+    margin: 4px 0
+}
+
+.workflow li[data-state="active"] {
+    color: #f59e0b;
+    font-weight: 700
+}
+
+.workflow li[data-state="done"] {
+    color: #22c55e
+}
+
+.workflow li[data-state="done"]::after {
+    content: " ✓"
+}
+
+@media(prefers-color-scheme:light) {
+    .workflow li {
+        color: #0f172a
+    }
+
+    .workflow li[data-state="active"] {
+        color: #92400e
+    }
+
+    .workflow li[data-state="done"] {
+        color: #166534
+    }
+}
